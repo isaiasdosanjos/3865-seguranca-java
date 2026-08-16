@@ -564,3 +564,156 @@ Action:
 
 Update your application's configuration
 
+2026-08-16 15:27:54.454 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2026-08-16 15:27:54.563 [main] INFO  m.v.web_application.WebApplication - Starting WebApplication using Java 25.0.1 with PID 16152 (C:\Users\User\Documents\Projetos Java\3865-seguranca-java\target\classes started by User in C:\Users\User\Documents\Projetos Java\3865-seguranca-java)
+2026-08-16 15:27:54.564 [main] DEBUG m.v.web_application.WebApplication - Running with Spring Boot v3.4.0, Spring v6.2.0
+2026-08-16 15:27:54.565 [main] INFO  m.v.web_application.WebApplication - No active profile set, falling back to 1 default profile: "default"
+2026-08-16 15:27:56.602 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-08-16 15:27:56.627 [main] DEBUG o.s.d.r.c.RepositoryConfigurationDelegate - Scanning for JPA repositories in packages med.voll.web_application.
+2026-08-16 15:27:56.643 [main] DEBUG o.s.d.r.c.RepositoryComponentProvider - Identified candidate component class: file [C:\Users\User\Documents\Projetos Java\3865-seguranca-java\target\classes\med\voll\web_application\domain\consulta\ConsultaRepository.class]
+2026-08-16 15:27:56.643 [main] DEBUG o.s.d.r.c.RepositoryComponentProvider - Identified candidate component class: file [C:\Users\User\Documents\Projetos Java\3865-seguranca-java\target\classes\med\voll\web_application\domain\medico\MedicoRepository.class]
+2026-08-16 15:27:56.693 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 63 ms. Found 2 JPA repository interfaces.
+2026-08-16 15:27:58.032 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-08-16 15:27:58.058 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-08-16 15:27:58.061 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-08-16 15:27:58.062 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.33]
+2026-08-16 15:27:58.165 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-08-16 15:27:58.165 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3203 ms
+2026-08-16 15:27:59.050 [main] DEBUG o.s.w.f.ServerHttpObservationFilter - Filter 'webMvcObservationFilter' configured for use
+2026-08-16 15:27:59.464 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-08-16 15:28:00.104 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@642ec6
+2026-08-16 15:28:00.110 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-08-16 15:28:00.334 [main] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:mysql://localhost/vollmed_web?createDatabaseIfNotExist=true (MySQL 8.0)
+2026-08-16 15:28:00.512 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 2 migrations (execution time 00:00.103s)
+2026-08-16 15:28:00.566 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema `vollmed_web`: 2
+2026-08-16 15:28:00.575 [main] INFO  o.f.core.internal.command.DbMigrate - Schema `vollmed_web` is up to date. No migration necessary.
+2026-08-16 15:28:00.955 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-08-16 15:28:01.091 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.2.Final
+2026-08-16 15:28:01.170 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-08-16 15:28:01.871 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-08-16 15:28:02.060 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'io.opentelemetry.instrumentation.jdbc.datasource.OpenTelemetryDataSource@23169374']
+	Database driver: undefined/unknown
+	Database version: 8.0.46
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-08-16 15:28:04.069 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-08-16 15:28:04.087 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-08-16 15:28:04.475 [main] DEBUG o.s.d.j.r.c.JpaMetamodelMappingContextFactoryBean - Initializing JpaMetamodelMappingContext…
+2026-08-16 15:28:04.510 [main] DEBUG o.s.d.j.r.c.JpaMetamodelMappingContextFactoryBean - Finished initializing JpaMetamodelMappingContext
+2026-08-16 15:28:04.861 [main] DEBUG o.s.d.r.c.s.RepositoryFactorySupport - Initializing repository instance for med.voll.web_application.domain.consulta.ConsultaRepository…
+2026-08-16 15:28:05.001 [main] DEBUG o.s.d.j.repository.query.NamedQuery - Looking up named query Consulta.findAllByOrderByData
+2026-08-16 15:28:05.008 [main] DEBUG o.s.d.j.repository.query.NamedQuery - Did not find named query Consulta.findAllByOrderByData
+2026-08-16 15:28:05.102 [main] DEBUG o.s.d.r.c.s.RepositoryFactorySupport - Finished creation of repository instance for med.voll.web_application.domain.consulta.ConsultaRepository.
+2026-08-16 15:28:05.172 [main] DEBUG o.s.d.r.c.s.RepositoryFactorySupport - Initializing repository instance for med.voll.web_application.domain.medico.MedicoRepository…
+2026-08-16 15:28:05.188 [main] DEBUG o.s.d.j.repository.query.NamedQuery - Did not find named query Medico.isJaCadastrado.count
+2026-08-16 15:28:05.225 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-08-16 15:28:06.522 [main] DEBUG o.s.d.j.repository.query.NamedQuery - Looking up named query Medico.findByEspecialidade
+2026-08-16 15:28:06.522 [main] DEBUG o.s.d.j.repository.query.NamedQuery - Did not find named query Medico.findByEspecialidade
+2026-08-16 15:28:06.541 [main] DEBUG o.s.d.r.c.s.RepositoryFactorySupport - Finished creation of repository instance for med.voll.web_application.domain.medico.MedicoRepository.
+2026-08-16 15:28:06.747 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-08-16 15:28:06.825 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name dadosUsuarioCadastrado
+2026-08-16 15:28:06.974 [main] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page template: index
+2026-08-16 15:28:07.091 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 12 mappings in 'requestMappingHandlerMapping'
+2026-08-16 15:28:07.337 [main] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2026-08-16 15:28:07.621 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 3 endpoints beneath base path '/actuator'
+2026-08-16 15:28:07.803 [main] DEBUG o.s.s.web.DefaultSecurityFilterChain - Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, CorsFilter, CsrfFilter, LogoutFilter, UsernamePasswordAuthenticationFilter, DefaultResourcesFilter, DefaultLoginPageGeneratingFilter, DefaultLogoutPageGeneratingFilter, BasicAuthenticationFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, ExceptionTranslationFilter, AuthorizationFilter
+2026-08-16 15:28:08.108 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2026-08-16 15:28:08.507 [main] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2026-08-16 15:28:08.538 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.boot.context.properties.ConfigurationPropertiesBindException: Error creating bean with name 'otel.resource-io.opentelemetry.instrumentation.spring.autoconfigure.internal.properties.OtelResourceProperties': Could not bind properties to 'OtelResourceProperties' : prefix=otel.resource, ignoreInvalidFields=false, ignoreUnknownFields=true
+2026-08-16 15:28:08.543 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-08-16 15:28:08.551 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-08-16 15:28:08.587 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-08-16 15:28:08.606 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2026-08-16 15:28:08.613 [main] WARN  o.a.c.loader.WebappClassLoaderBase - The web application [ROOT] appears to have started a thread named [BatchSpanProcessor_WorkerThread-1] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:271)
+ java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1803)
+ java.base/java.util.concurrent.ArrayBlockingQueue.poll(ArrayBlockingQueue.java:436)
+ io.opentelemetry.sdk.trace.export.BatchSpanProcessor$Worker.run(BatchSpanProcessor.java:266)
+ java.base/java.lang.Thread.run(Thread.java:1474)
+2026-08-16 15:28:08.615 [main] WARN  o.a.c.loader.WebappClassLoaderBase - The web application [ROOT] appears to have started a thread named [Okio Watchdog] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:271)
+ java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1892)
+ okio.AsyncTimeout$Companion.awaitTimeout$okio(AsyncTimeout.kt:320)
+ okio.AsyncTimeout$Watchdog.run(AsyncTimeout.kt:186)
+2026-08-16 15:28:08.617 [main] WARN  o.a.c.loader.WebappClassLoaderBase - The web application [ROOT] appears to have started a thread named [OkHttp TaskRunner] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:408)
+ java.base/java.util.concurrent.LinkedTransferQueue$DualNode.await(LinkedTransferQueue.java:452)
+ java.base/java.util.concurrent.SynchronousQueue$Transferer.xferLifo(SynchronousQueue.java:194)
+ java.base/java.util.concurrent.SynchronousQueue.xfer(SynchronousQueue.java:235)
+ java.base/java.util.concurrent.SynchronousQueue.poll(SynchronousQueue.java:338)
+ java.base/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1015)
+ java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1076)
+ java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+ java.base/java.lang.Thread.run(Thread.java:1474)
+2026-08-16 15:28:08.617 [main] WARN  o.a.c.loader.WebappClassLoaderBase - The web application [ROOT] appears to have started a thread named [OkHttp TaskRunner] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:408)
+ java.base/java.util.concurrent.LinkedTransferQueue$DualNode.await(LinkedTransferQueue.java:452)
+ java.base/java.util.concurrent.SynchronousQueue$Transferer.xferLifo(SynchronousQueue.java:194)
+ java.base/java.util.concurrent.SynchronousQueue.xfer(SynchronousQueue.java:235)
+ java.base/java.util.concurrent.SynchronousQueue.poll(SynchronousQueue.java:338)
+ java.base/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1015)
+ java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1076)
+ java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+ java.base/java.lang.Thread.run(Thread.java:1474)
+2026-08-16 15:28:08.618 [main] WARN  o.a.c.loader.WebappClassLoaderBase - The web application [ROOT] appears to have started a thread named [OkHttp TaskRunner] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:408)
+ java.base/java.util.concurrent.LinkedTransferQueue$DualNode.await(LinkedTransferQueue.java:452)
+ java.base/java.util.concurrent.SynchronousQueue$Transferer.xferLifo(SynchronousQueue.java:194)
+ java.base/java.util.concurrent.SynchronousQueue.xfer(SynchronousQueue.java:235)
+ java.base/java.util.concurrent.SynchronousQueue.poll(SynchronousQueue.java:338)
+ java.base/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1015)
+ java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1076)
+ java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+ java.base/java.lang.Thread.run(Thread.java:1474)
+2026-08-16 15:28:08.618 [main] WARN  o.a.c.loader.WebappClassLoaderBase - The web application [ROOT] appears to have started a thread named [OkHttp TaskRunner] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:408)
+ java.base/java.util.concurrent.LinkedTransferQueue$DualNode.await(LinkedTransferQueue.java:452)
+ java.base/java.util.concurrent.SynchronousQueue$Transferer.xferLifo(SynchronousQueue.java:194)
+ java.base/java.util.concurrent.SynchronousQueue.xfer(SynchronousQueue.java:235)
+ java.base/java.util.concurrent.SynchronousQueue.poll(SynchronousQueue.java:338)
+ java.base/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1015)
+ java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1076)
+ java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+ java.base/java.lang.Thread.run(Thread.java:1474)
+2026-08-16 15:28:08.619 [main] WARN  o.a.c.loader.WebappClassLoaderBase - The web application [ROOT] appears to have started a thread named [OkHttp TaskRunner] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:408)
+ java.base/java.util.concurrent.LinkedTransferQueue$DualNode.await(LinkedTransferQueue.java:452)
+ java.base/java.util.concurrent.SynchronousQueue$Transferer.xferLifo(SynchronousQueue.java:194)
+ java.base/java.util.concurrent.SynchronousQueue.xfer(SynchronousQueue.java:235)
+ java.base/java.util.concurrent.SynchronousQueue.poll(SynchronousQueue.java:338)
+ java.base/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1015)
+ java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1076)
+ java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+ java.base/java.lang.Thread.run(Thread.java:1474)
+2026-08-16 15:28:08.752 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-08-16 15:28:08.964 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to bind properties under 'otel.resource.attributes' to java.util.Map<java.lang.String, java.lang.String>:
+
+    Property: otel.resource.attributes
+    Value: "service.name=vollmed-web,service.version=1.0.0"
+    Origin: class path resource [application.properties] - 33:26
+    Reason: org.springframework.core.convert.ConverterNotFoundException: No converter found capable of converting from type [java.lang.String] to type [java.util.Map<java.lang.String, java.lang.String>]
+
+Action:
+
+Update your application's configuration
+
