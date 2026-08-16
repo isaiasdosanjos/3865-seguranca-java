@@ -17,8 +17,8 @@ Previously, telemetry events from login, consulta, and page access were **not be
 - Set up service resource attributes (service name, version)
 
 ### 2. **Docker Stack**
-- **Elasticsearch** - Stores telemetry data
-- **Kibana** - Visualize logs, traces, and metrics
+- **Elasticsearch 9.4.2** - Stores telemetry data (otel-logs, otel-traces, otel-metrics indices)
+- **Grafana** - Visualize logs, traces, and metrics dashboards
 - **OpenTelemetry Collector** - Receives OTLP data and exports to Elasticsearch
 
 ### 3. **Auto-Instrumentation**
@@ -42,7 +42,7 @@ docker-compose up -d
 
 Wait for services to be ready (~30 seconds):
 - Elasticsearch: `http://localhost:9200`
-- Kibana: `http://localhost:5601`
+- Grafana: `http://localhost:3000` (admin/admin)
 - OTLP Collector gRPC: `localhost:4317`
 
 ### Step 2: Run Your Application
@@ -52,22 +52,32 @@ Build and run the Spring Boot application normally. It will automatically:
 2. Send traces/metrics/logs to the collector on port 4317
 3. Collector routes data to Elasticsearch
 
-### Step 3: View in Kibana
+### Step 3: View in Grafana
 
-#### View Traces
-1. Navigate to **Kibana** → http://localhost:5601
-2. Go to **Observability** → **Traces**
+#### 1. Connect Elasticsearch Datasource
+1. Navigate to **Grafana** → http://localhost:3000 (login: admin/admin)
+2. Go to **Configuration** → **Data Sources**
+3. Click **Add data source** → Select **Elasticsearch**
+4. Configure:
+   - **URL**: `http://elasticsearch:9200`
+   - **Index name**: `otel-logs` (or `otel-traces`, `otel-metrics`)
+   - Click **Save & Test**
+
+#### 2. View Traces
+1. Go to **Dashboards** or **Explore**
+2. Select Elasticsearch datasource with index `otel-traces`
 3. You'll see traces for:
    - `POST /login` - Login events with authentication details
    - `GET /medicos` - Doctor listing queries
    - `POST /consulta` - Appointment bookings
    - All HTTP requests with database queries
 
-#### View Logs
-1. Go to **Observability** → **Logs**
-2. Filter by `service.name: "vollmed-web"`
-3. See structured logs with attributes:
-   ```
+#### 3. View Logs
+1. Create a dashboard for logs
+2. Add a panel querying index `otel-logs`
+3. Filter by fields like `service.name: "vollmed-web"`
+4. See structured logs with attributes:
+   ```json
    {
      "service.name": "vollmed-web",
      "operation": "register-doctor",
@@ -76,9 +86,9 @@ Build and run the Spring Boot application normally. It will automatically:
    }
    ```
 
-#### View Metrics
-1. Go to **Observability** → **Metrics**
-2. See Prometheus metrics exported by Actuator
+#### 4. View Metrics
+1. Query index `otel-metrics` in Grafana
+2. See application and infrastructure metrics
 
 ## What Gets Telemetry
 
@@ -136,10 +146,18 @@ curl "http://localhost:9200/logs-*/_search?pretty" | jq .
 curl "http://localhost:9200/traces-*/_search?pretty" | jq .
 ```
 
-### 4. View in Kibana
-- Open http://localhost:5601
-- Create data views for `logs-*`, `traces-*`, `metrics-*`
-- Explore traces and logs
+### 4. Query Elasticsearch Directly
+Use curl to verify data is flowing:
+```bash
+# List indices
+curl http://localhost:9200/_cat/indices
+
+# Query recent logs
+curl "http://localhost:9200/otel-logs/_search?pretty" | jq .
+
+# Query traces
+curl "http://localhost:9200/otel-traces/_search?pretty" | jq .
+```
 
 ## Configuration
 
@@ -158,24 +176,24 @@ otel.traces.sampler.arg=0.1
 
 ## Troubleshooting
 
-**Issue**: No data appearing in Kibana
+**Issue**: No data appearing in Grafana
 - Check if Elasticsearch is running: `curl http://localhost:9200`
 - Check if Collector is running: `docker logs $(docker ps -q --filter name=otel-collector)`
 - Check application logs for connection errors to `localhost:4317`
+- Verify indices exist: `curl http://localhost:9200/_cat/indices`
 
-**Issue**: High disk usage
-- Elasticsearch can use significant space. Set retention:
-```bash
-curl -X PUT "localhost:9200/logs-*/_settings?pretty" -H 'Content-Type: application/json' -d'
-{
-  "index.lifecycle.name": "logs",
-  "index.lifecycle.rollover_alias": "logs"
-}'
-```
+**Issue**: Elasticsearch indices not created
+- Ensure collector debug exporter is enabled (showing logs in console)
+- Manually send a test log: 
+  ```bash
+  curl -X POST "localhost:9200/otel-logs/_doc" -H 'Content-Type: application/json' \
+    -d '{"test": "data", "@timestamp": "'$(date -u +%Y-%m-%dT%H:%M:%SZ)'"}'
+  ```
 
-**Issue**: Slow queries
-- Check JDBC instrumentation not overwhelming system
-- Disable if needed: `otel.instrumentation.jdbc.enabled=false`
+**Issue**: Grafana cannot connect to Elasticsearch
+- Verify Elasticsearch URL is `http://elasticsearch:9200` (internal Docker network)
+- Check Docker network: `docker network ls` and `docker network inspect observability`
+- Restart services: `docker-compose restart`
 
 ## Stopping the Stack
 
@@ -186,5 +204,7 @@ docker-compose down -v  # -v removes volumes
 ## References
 
 - [OpenTelemetry Documentation](https://opentelemetry.io/docs/)
-- [Spring Boot Starter for OTel](https://github.com/open-telemetry/opentelemetry-java-instrumentation/tree/main/instrumentation/spring/spring-boot-autoconfigure)
-- [Kibana Observability](https://www.elastic.co/guide/en/kibana/current/xpack-observability.html)
+- [Spring Boot Starter for OTel](https://github.com/open-telemetry/opentelemetry-java-instrumentation)
+- [Grafana Elasticsearch Datasource](https://grafana.com/grafana/plugins/grafana-elasticsearch-datasource/)
+- [Elasticsearch Documentation](https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html)
+- [OTLP Collector](https://opentelemetry.io/docs/collector/)
